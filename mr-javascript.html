@@ -3,6 +3,28 @@
     <head>
         <meta charset="utf-8">
         <title>Mr.Javascript</title>
+
+        <style type = "text/css">
+
+            #container {
+                position: absolute;
+                left: 20px;
+                top: 300px;
+                height: 500px;
+                width: 500px;
+                border: 3px solid #CCC;
+                background-color: #FFF;
+            }
+
+            .box {
+                float:left;
+                width: 75px;
+                height: 100px;
+                margin: 10px;
+                background: #FFF url('http://placekitten.com/g/75/100/') no-repeat ;
+            }
+
+        </style>
     </head>
 
     <body>
@@ -10,7 +32,15 @@
         <a href="#" class="Reset">Reset</a>
         <a href="#" class="howareyou">Hey Javascript, how ya feeling?</a>
 
+        <p>Function Excerices</p>
+
+        <!-- CAT -->
+        <div id="container">
+            <div class="box"></div>
+        </div>
+
         <script type="text/javascript">
+            // Change on click function
             var a = document.querySelector('.howareyou');
             a.addEventListener('click', function() {
                 alert("We're inside the listener");
@@ -28,6 +58,7 @@
                 console.log(h1);
             });
         
+            // Number sum function 
             function sum(a,b) {
                 c = a + b;
                 // document.write(c);
@@ -36,6 +67,33 @@
             }
 
             document.write(sum(3,2));
+
+            // How many letters function 
+            function howManyLetters(word) {
+                var answer = word.length;
+                document.write(answer + "<br>");
+            }
+
+            howManyLetters("Mamamoooooo");
+
+            // Loop
+            var beatles = ["John", "Paul", "Ringo", "George"];
+            for (num = 0; num < 4; num++) {
+                document.write(beatles[num] + "<br>");
+            }
+
+            // CAT
+            var x;
+            for(x=0;x<20;x++) {
+                setTimeout(function() {
+                var box = document.createElement('div');
+                box.className = 'box';
+                document.getElementById('container').appendChild(box); 
+                }, 500*x);           
+            }
+             
+
+
         </script>
     </body>
 </html>
